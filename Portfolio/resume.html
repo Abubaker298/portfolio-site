@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resume | Abu Baker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+    /* --- SCREEN STYLES (DARK MODE) --- */
+    body {
+        font-family: "Poppins", sans-serif;
+        background: #050607;
+        color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+    }
+
+    .container {
+        width: min(900px, 92%);
+        margin: 30px auto;
+        background: #101018;
+        padding: 40px;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+        font-size: 32px;
+        margin: 0 0 5px 0;
+        color: #ff6a00;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        color: #cccccc;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 25px;
+        margin-bottom: 12px;
+        color: #ff9f1c;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    h3 {
+        font-size: 16px;
+        margin: 15px 0 2px 0;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .meta {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 6px;
+        font-style: italic;
+    }
+
+    p {
+        margin: 0 0 10px 0;
+        color: #dcdcdc;
+    }
+
+    ul {
+        margin: 4px 0 0 18px;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #dcdcdc;
+    }
+
+    .columns {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .col {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    /* DOWNLOAD BUTTON */
+    .btn-download {
+        display: inline-block;
+        background: linear-gradient(135deg, #ff6a00, #ff9f1c);
+        padding: 10px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        color: #050607;
+        font-weight: 600;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        font-size: 14px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+        transition: transform 0.2s;
+    }
+
+    .btn-download:hover {
+        transform: translateY(-2px);
+    }
+
+    .contact-info {
+        font-size: 14px;
+        color: #aaaaaa;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .contact-info a {
+        color: #ff9f1c;
+        text-decoration: none;
+    }
+
+    /* --- PRINT / PDF STYLES (SINGLE PAGE FORCE) --- */
+    @media print {
+        @page {
+            size: A4;
+            margin: 8mm 12mm; /* Tight margins to fit content */
+        }
+
+        body {
+            background: #fff !important;
+            color: #000 !important;
+            font-size: 11px !important; /* Smaller font for print */
+            line-height: 1.35 !important; /* Tighter lines */
+        }
+
+        .container {
+            width: 100% !important;
+            max-width: none !important;
+            background: #fff !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+        }
+
+        /* Hide the download button in PDF */
+        .btn-download {
+            display: none !important;
+        }
+
+        /* Compact Headings */
+        h1 {
+            font-size: 24px !important;
+            color: #000 !important;
+            margin-bottom: 2px !important;
+        }
+
+        .subtitle {
+            font-size: 14px !important;
+            color: #333 !important;
+            margin-bottom: 10px !important;
+        }
+
+        h2 {
+            font-size: 14px !important;
+            margin-top: 12px !important;
+            margin-bottom: 6px !important;
+            color: #000 !important;
+            border-bottom: 1px solid #000 !important;
+            padding-bottom: 2px !important;
+        }
+
+        h3 {
+            font-size: 12px !important;
+            margin-top: 8px !important;
+            color: #000 !important;
+        }
+
+        .meta {
+            font-size: 11px !important;
+            color: #444 !important;
+            margin-bottom: 2px !important;
+        }
+
+        /* Compact Lists */
+        ul {
+            margin-top: 2px !important;
+        }
+
+        li {
+            font-size: 11px !important;
+            color: #000 !important;
+            margin-bottom: 2px !important;
+        }
+
+        p {
+            font-size: 11px !important;
+            color: #000 !important;
+            text-align: justify;
+        }
+
+        /* Contact Info row */
+        .contact-info {
+            color: #000 !important;
+            margin-bottom: 10px !important;
+            font-size: 11px !important;
+        }
+        .contact-info a {
+            color: #000 !important;
+            text-decoration: none !important;
+        }
+
+        /* Columns layout for print */
+        .columns {
+            display: flex !important;
+            gap: 20px !important;
+        }
+        
+        /* Ensure background colors are printed if needed (not needed here but good practice) */
+        * {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Abu Baker</h1>
+    <div class="subtitle">Unity Game Developer</div>
+    
+    <div class="contact-info">
+        <span>📍 Lahore, Pakistan</span>
+        <span>📞 +92 300 0423918</span>
+        <span>📧 bakerrana298@gmail.com</span>
+    </div>
+
+    <a class="btn-download" onclick="window.print()">Download as PDF</a>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>
+            Results-driven Unity Game Developer with 2.5+ years of experience in the full lifecycle of mobile game development. 
+            Specialized in Gameplay Programming, AI Architecture, and Mobile Performance Optimization. 
+            Proven track record of delivering polished Simulation, Action, and Casual titles with clean, modular C# code. 
+            Adept at collaborating within Agile teams to translate design concepts into engaging, revenue-generating products.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="columns">
+            <div class="col">
+                <strong>Core Competencies</strong>
+                <ul>
+                    <li>C# (Advanced), OOP, SOLID Principles</li>
+                    <li>Unity 3D/2D, Clean Architecture (MVC/FSM)</li>
+                    <li>Data Structures & Algorithms</li>
+                    <li>Design Patterns (Singleton, Observer, Factory)</li>
+                </ul>
+            </div>
+            <div class="col">
+                <strong>Engine & Tools</strong>
+                <ul>
+                    <li>Physics & Collision Systems</li>
+                    <li>NavMesh AI & Pathfinding</li>
+                    <li>Mecanim Animation & IK Rigging</li>
+                    <li>Profiler, Memory Management & Optimization</li>
+                    <li>Git/GitHub, Firebase, AdMob Integration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Experience</h2>
+
+        <h3>Unity Game Developer</h3>
+        <div class="meta">The Gaminators Group | Lahore, Pakistan | July 2023 – Present</div>
+        <ul>
+            <li><strong>Gameplay Systems:</strong> Engineered robust player controllers (TPS/FPS), combat mechanics, and interaction systems for multiple live simulation and action games.</li>
+            <li><strong>AI Development:</strong> Designed intelligent NPC behaviors using Finite State Machines (FSM) and Behaviour Trees, including patrol logic, vision detection, and dynamic pathfinding.</li>
+            <li><strong>Performance Optimization:</strong> Reduced draw calls and memory usage by 30% through Object Pooling, Texture Atlasing, and script optimization, ensuring smooth 60 FPS on low-end devices.</li>
+            <li><strong>Monetization & Analytics:</strong> Integrated third-party SDKs (AppLovin MAX, AdMob) and Firebase Analytics to track user retention and revenue events.</li>
+            <li><strong>Collaboration:</strong> Worked closely with 3D artists and Game Designers to implement complex UI flows, animations, and level logic.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Key Projects</h2>
+
+        <h3>Prison Escape Master Mind Game</h3>
+        <div class="meta">Stealth / Strategy</div>
+        <ul>
+            <li>Implemented a stealth detection system using Raycasting and Vision Cones.</li>
+            <li>Developed a dynamic difficulty system that adjusts guard AI sensitivity based on player progress.</li>
+        </ul>
+
+        <h3>Arena Champions: Fighting Game</h3>
+        <div class="meta">Action / Combat</div>
+        <ul>
+            <li>Created a responsive combo system using Animation Events to allow precise hit detection.</li>
+            <li>Designed a modular damage interface allowing different weapon types and enemy reactions.</li>
+        </ul>
+
+        <h3>Pet Supermarket Shop Simulator</h3>
+        <div class="meta">Simulation / Management</div>
+        <ul>
+            <li>Built a complex economy system handling inventory management, pricing, and customer transactions.</li>
+            <li>Implemented Save/Load systems using JSON serialization for persistent game states.</li>
+        </ul>
+    </div>
+
+    <div class="columns">
+        <div class="col">
+            <h2>Education</h2>
+            <div style="margin-top: 5px;">
+                <strong>BS Software Engineering</strong><br>
+                <span class="meta">Virtual University of Pakistan</span>
+            </div>
+        </div>
+
+        <div class="col">
+            <h2>Languages</h2>
+            <ul>
+                <li>English (Professional)</li>
+                <li>Urdu (Native)</li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <h2>Interests</h2>
+            <ul>
+                <li>Game Design Analysis</li>
+                <li>Emerging VR/AR Tech</li>
+                <li>Cricket & Badminton</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
