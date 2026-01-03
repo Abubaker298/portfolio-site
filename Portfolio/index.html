@@ -33,10 +33,7 @@
 
         body {
             font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background:
-                radial-gradient(circle at top left, #191622 0, transparent 55%),
-                radial-gradient(circle at bottom right, #1a0f0a 0, transparent 55%),
-                #050607;
+            background: radial-gradient(circle at top left, #191622 0, transparent 55%), radial-gradient(circle at bottom right, #1a0f0a 0, transparent 55%), #050607;
             color: var(--text-main);
             line-height: 1.6;
         }
@@ -93,24 +90,24 @@
             transition: color 0.2s ease-out;
         }
 
-        .nav-right a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 0%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
-            transition: width 0.25s ease-out;
-        }
+            .nav-right a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -4px;
+                width: 0%;
+                height: 2px;
+                background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+                transition: width 0.25s ease-out;
+            }
 
-        .nav-right a:hover {
-            color: #fff;
-        }
+            .nav-right a:hover {
+                color: #fff;
+            }
 
-        .nav-right a:hover::after {
-            width: 100%;
-        }
+                .nav-right a:hover::after {
+                    width: 100%;
+                }
 
         /* HERO SECTION */
         #hero {
@@ -142,9 +139,9 @@
             margin-bottom: 14px;
         }
 
-        .hero-title span {
-            color: var(--accent);
-        }
+            .hero-title span {
+                color: var(--accent);
+            }
 
         .hero-subtitle {
             font-size: 0.98rem;
@@ -199,10 +196,10 @@
             box-shadow: 0 10px 25px rgba(255, 106, 0, 0.45);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 14px 32px rgba(255, 106, 0, 0.6);
-        }
+            .btn-primary:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 14px 32px rgba(255, 106, 0, 0.6);
+            }
 
         .btn-ghost {
             background: transparent;
@@ -210,10 +207,10 @@
             border-color: rgba(255, 255, 255, 0.16);
         }
 
-        .btn-ghost:hover {
-            border-color: var(--accent);
-            background: rgba(255, 106, 0, 0.07);
-        }
+            .btn-ghost:hover {
+                border-color: var(--accent);
+                background: rgba(255, 106, 0, 0.07);
+            }
 
         .hero-metrics {
             display: flex;
@@ -223,11 +220,11 @@
             color: var(--text-muted);
         }
 
-        .hero-metrics strong {
-            display: block;
-            font-size: 1.1rem;
-            color: #fff;
-        }
+            .hero-metrics strong {
+                display: block;
+                font-size: 1.1rem;
+                color: #fff;
+            }
 
         /* HERO RIGHT - PROFILE CARD */
         .hero-profile-card {
@@ -240,14 +237,14 @@
             overflow: hidden;
         }
 
-        .hero-profile-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 40%, rgba(255, 106, 0, 0.12));
-            mix-blend-mode: soft-light;
-            pointer-events: none;
-        }
+            .hero-profile-card::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 40%, rgba(255, 106, 0, 0.12));
+                mix-blend-mode: soft-light;
+                pointer-events: none;
+            }
 
         .profile-img {
             display: block;
@@ -370,13 +367,13 @@
             border: 1px solid var(--border-subtle);
         }
 
-        .skill-card h3 {
-            font-size: 0.92rem;
-            margin-bottom: 10px;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+            .skill-card h3 {
+                font-size: 0.92rem;
+                margin-bottom: 10px;
+                color: #ffffff;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
 
         .skill-list {
             list-style: none;
@@ -384,20 +381,20 @@
             color: #d3d3d3;
         }
 
-        .skill-list li {
-            margin-bottom: 6px;
-            padding-left: 14px;
-            position: relative;
-        }
+            .skill-list li {
+                margin-bottom: 6px;
+                padding-left: 14px;
+                position: relative;
+            }
 
-        .skill-list li::before {
-            content: "●";
-            position: absolute;
-            left: 0;
-            font-size: 0.6rem;
-            color: var(--accent-soft);
-            top: 4px;
-        }
+                .skill-list li::before {
+                    content: "●";
+                    position: absolute;
+                    left: 0;
+                    font-size: 0.6rem;
+                    color: var(--accent-soft);
+                    top: 4px;
+                }
 
         /* EXPERIENCE SECTION */
         .timeline-card {
@@ -407,10 +404,10 @@
             border: 1px solid var(--border-subtle);
         }
 
-        .timeline-card h3 {
-            font-size: 1rem;
-            margin-bottom: 6px;
-        }
+            .timeline-card h3 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
 
         .timeline-meta {
             font-size: 0.8rem;
@@ -418,9 +415,9 @@
             margin-bottom: 12px;
         }
 
-        .timeline-meta strong {
-            color: var(--accent-soft);
-        }
+            .timeline-meta strong {
+                color: var(--accent-soft);
+            }
 
         .timeline-list {
             list-style: none;
@@ -428,20 +425,20 @@
             color: #d3d3d3;
         }
 
-        .timeline-list li {
-            margin-bottom: 6px;
-            padding-left: 14px;
-            position: relative;
-        }
+            .timeline-list li {
+                margin-bottom: 6px;
+                padding-left: 14px;
+                position: relative;
+            }
 
-        .timeline-list li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            font-size: 0.75rem;
-            color: var(--accent);
-            top: 1px;
-        }
+                .timeline-list li::before {
+                    content: "▹";
+                    position: absolute;
+                    left: 0;
+                    font-size: 0.75rem;
+                    color: var(--accent);
+                    top: 1px;
+                }
 
         /* PROJECTS / GAMES SECTION */
         .game-grid {
@@ -461,11 +458,11 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
-        .game-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 26px 60px rgba(0, 0, 0, 0.8);
-            border-color: rgba(255, 106, 0, 0.7);
-        }
+            .game-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 26px 60px rgba(0, 0, 0, 0.8);
+                border-color: rgba(255, 106, 0, 0.7);
+            }
 
         .game-thumb-wrap {
             position: relative;
@@ -544,10 +541,10 @@
             letter-spacing: 1px;
         }
 
-        .play-btn:hover {
-            background: linear-gradient(120deg, var(--accent), var(--accent-soft));
-            color: #050607;
-        }
+            .play-btn:hover {
+                background: linear-gradient(120deg, var(--accent), var(--accent-soft));
+                color: #050607;
+            }
 
         /* CONTACT SECTION */
         .contact-card {
@@ -558,11 +555,11 @@
             text-align: center;
         }
 
-        .contact-card p {
-            font-size: 0.9rem;
-            color: #d3d3d3;
-            margin-bottom: 10px;
-        }
+            .contact-card p {
+                font-size: 0.9rem;
+                color: #d3d3d3;
+                margin-bottom: 10px;
+            }
 
         .contact-label {
             font-size: 0.75rem;
@@ -588,6 +585,7 @@
             .hero-grid {
                 grid-template-columns: 1fr;
             }
+
             #hero {
                 padding-top: 20px;
             }
@@ -653,7 +651,7 @@
                 <div class="hero-actions">
                     <a href="#projects" class="btn btn-primary">View Live Games</a>
                     <a href="#contact" class="btn btn-ghost">Hire Me</a>
-		    <a href="resume.html" class="btn btn-primary">Download Resume</a>
+                    <a href="resume.html" class="btn btn-primary">Download Resume</a>
                 </div>
 
                 <div class="hero-metrics">
@@ -711,8 +709,10 @@
                     genres.
                 </p>
                 <p>
-                    With mastery in <strong>C#, AI systems, gameplay architecture, and real-time interaction
-                    mechanics</strong>, I specialize in building smooth, optimized, and scalable gameplay systems with
+                    With mastery in <strong>
+                        C#, AI systems, gameplay architecture, and real-time interaction
+                        mechanics
+                    </strong>, I specialize in building smooth, optimized, and scalable gameplay systems with
                     clean, modular code.
                 </p>
                 <p>
@@ -810,30 +810,30 @@
             <div class="game-grid">
 
                 <!-- GAME 1 -->
-<a class="game-card"
-   href="https://play.google.com/store/apps/details?id=com.gp10.prisonescapegame.jailbreak"
-   target="_blank">
-    <div class="game-thumb-wrap">
-        <img src="img/prison.jpg" alt="Prison Escape Master Mind Game" class="game-thumb" />
-        <span class="game-tag-badge">Stealth · Strategy</span>
-    </div>
-    <div class="game-body">
-        <h3 class="game-title">Prison Escape Master Mind Game</h3>
-        <p class="game-desc">
-            Stealth-based gameplay with patrol AI, vision cones, state machines and pathfinding-driven
-            guard behavior in a tense escape experience.
-        </p>
-        <div class="game-meta-row">
-            <div>
-                <div class="meta-label">Role</div>
-                AI · Stealth systems
-            </div>
-            <div>
-                <span class="play-btn">Play on Google Play ⟶</span>
-            </div>
-        </div>
-    </div>
-</a>
+                <a class="game-card"
+                   href="https://play.google.com/store/apps/details?id=com.gp10.prisonescapegame.jailbreak"
+                   target="_blank">
+                    <div class="game-thumb-wrap">
+                        <img src="img/prison.jpg" alt="Prison Escape Master Mind Game" class="game-thumb" />
+                        <span class="game-tag-badge">Stealth · Strategy</span>
+                    </div>
+                    <div class="game-body">
+                        <h3 class="game-title">Prison Escape Master Mind Game</h3>
+                        <p class="game-desc">
+                            Stealth-based gameplay with patrol AI, vision cones, state machines and pathfinding-driven
+                            guard behavior in a tense escape experience.
+                        </p>
+                        <div class="game-meta-row">
+                            <div>
+                                <div class="meta-label">Role</div>
+                                AI · Stealth systems
+                            </div>
+                            <div>
+                                <span class="play-btn">Play on Google Play ⟶</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- GAME 2 -->
                 <a class="game-card"
@@ -913,58 +913,58 @@
                     </div>
                 </a>
                 <!-- GAME 5 -->
-<a class="game-card"
-   href="https://play.google.com/store/apps/details?id=com.gsb10.funnygirl.pranksbeargame"
-   target="_blank">
-    <div class="game-thumb-wrap">
-        <img src="img/girlbear.jpg" alt="Funny Girl Pranks Bear Game" class="game-thumb" />
-        <span class="game-tag-badge">Simulation · Comedy</span>
-    </div>
+                <a class="game-card"
+                   href="https://play.google.com/store/apps/details?id=com.gsb10.funnygirl.pranksbeargame"
+                   target="_blank">
+                    <div class="game-thumb-wrap">
+                        <img src="img/girlbear.jpg" alt="Funny Girl Pranks Bear Game" class="game-thumb" />
+                        <span class="game-tag-badge">Simulation · Comedy</span>
+                    </div>
 
-    <div class="game-body">
-        <h3 class="game-title">Funny Girl Pranks Bear Game</h3>
-        <p class="game-desc">
-            A hilarious prank-based adventure where the girl outsmarts the bear using fun props,
-            dynamic interactions, and comedy-style reactions.
-        </p>
+                    <div class="game-body">
+                        <h3 class="game-title">Funny Girl Pranks Bear Game</h3>
+                        <p class="game-desc">
+                            A hilarious prank-based adventure where the girl outsmarts the bear using fun props,
+                            dynamic interactions, and comedy-style reactions.
+                        </p>
 
-        <div class="game-meta-row">
-            <div>
-                <div class="meta-label">Role</div>
-                Gameplay · AI · Interaction Systems
-            </div>
-            <div>
-                <span class="play-btn">Play on Google Play ⟶</span>
-            </div>
-        </div>
-    </div>
-</a>
+                        <div class="game-meta-row">
+                            <div>
+                                <div class="meta-label">Role</div>
+                                Gameplay · AI · Interaction Systems
+                            </div>
+                            <div>
+                                <span class="play-btn">Play on Google Play ⟶</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
                 <!-- GAME 6 -->
-<a class="game-card"
-   href="https://play.google.com/store/apps/details?id=com.gp11.wilddino.hunting.simulatorgame"
-   target="_blank">
-    <div class="game-thumb-wrap">
-        <!-- TODO: Put your real render image here -->
-        <img src="img/monkey.jpg" alt="Funny Monkey Pranks Zoo Game" class="game-thumb" />
-        <span class="game-tag-badge">Simulation · Comedy</span>
-    </div>
-    <div class="game-body">
-        <h3 class="game-title">Funny Monkey Pranks Zoo Game</h3>
-        <p class="game-desc">
-            A humorous zoo adventure with prank mechanics, reactive AI, interactive props and dynamic
-            level behaviors built for mobile players.
-        </p>
-        <div class="game-meta-row">
-            <div>
-                <div class="meta-label">Role</div>
-                Core gameplay · AI · Systems
-            </div>
-            <div>
-                <span class="play-btn">Play on Google Play ⟶</span>
-            </div>
-        </div>
-    </div>
-</a>
+                <a class="game-card"
+                   href="https://play.google.com/store/apps/details?id=com.gp11.wilddino.hunting.simulatorgame"
+                   target="_blank">
+                    <div class="game-thumb-wrap">
+                        <!-- TODO: Put your real render image here -->
+                        <img src="img/monkey.jpg" alt="Funny Monkey Pranks Zoo Game" class="game-thumb" />
+                        <span class="game-tag-badge">Simulation · Comedy</span>
+                    </div>
+                    <div class="game-body">
+                        <h3 class="game-title">Funny Monkey Pranks Zoo Game</h3>
+                        <p class="game-desc">
+                            A humorous zoo adventure with prank mechanics, reactive AI, interactive props and dynamic
+                            level behaviors built for mobile players.
+                        </p>
+                        <div class="game-meta-row">
+                            <div>
+                                <div class="meta-label">Role</div>
+                                Core gameplay · AI · Systems
+                            </div>
+                            <div>
+                                <span class="play-btn">Play on Google Play ⟶</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
 
 
             </div>
