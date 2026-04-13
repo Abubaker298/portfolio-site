@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
 <style>
-    /* --- CSS VARIABLES MATCHING PORTFOLIO --- */
     :root {
       --ink: #03040a;
       --ink2: #080c18;
@@ -19,7 +18,6 @@
       --glass: rgba(8, 12, 24, 0.85);
     }
 
-    /* --- SCREEN STYLES (DARK/NEON MODE) --- */
     body {
         font-family: 'Space Grotesk', sans-serif;
         background: var(--ink);
@@ -41,7 +39,6 @@
         position: relative;
     }
 
-    /* Scanline effect from portfolio */
     .container::before {
         content: '';
         position: absolute;
@@ -58,10 +55,7 @@
         letter-spacing: 2px;
         line-height: 1;
     }
-    
-    h1 span {
-        color: var(--cyan);
-    }
+    h1 span { color: var(--cyan); }
 
     .subtitle {
         font-family: 'JetBrains Mono', monospace;
@@ -99,35 +93,20 @@
         text-transform: uppercase;
     }
 
-    p {
-        margin: 0 0 12px 0;
-        font-size: 0.95rem;
-    }
+    p { margin: 0 0 12px 0; font-size: 0.95rem; }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin-bottom: 6px; font-size: 0.9rem; }
+    li::marker { color: var(--cyan); }
 
-    ul {
-        margin: 8px 0 0 18px;
-        padding: 0;
-    }
+    .columns { display: flex; gap: 40px; flex-wrap: wrap; }
+    .col { flex: 1; min-width: 250px; }
 
-    li {
-        margin-bottom: 6px;
-        font-size: 0.9rem;
+    .games-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 30px;
     }
-    
-    li::marker {
-        color: var(--cyan);
-    }
-
-    .columns {
-        display: flex;
-        gap: 40px;
-        flex-wrap: wrap;
-    }
-
-    .col {
-        flex: 1;
-        min-width: 250px;
-    }
+    .game-item h3 { margin-top: 0; margin-bottom: 2px; font-size: 1.05rem; }
 
     .contact-info {
         font-family: 'JetBrains Mono', monospace;
@@ -138,16 +117,9 @@
         gap: 20px;
         flex-wrap: wrap;
     }
-    .contact-info a {
-        color: var(--cyan);
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-    .contact-info a:hover {
-        color: #fff;
-    }
+    .contact-info a { color: var(--cyan); text-decoration: none; transition: color 0.2s; }
+    .contact-info a:hover { color: #fff; }
 
-    /* DOWNLOAD BUTTON MATCHING PORTFOLIO */
     .btn-download {
         font-family: 'JetBrains Mono', monospace;
         font-size: 0.75rem;
@@ -171,13 +143,7 @@
         transform: translateY(-2px);
     }
 
-    /* SKILL CHIPS */
-    .chip-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 10px;
-    }
+    .chip-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
     .chip {
         font-family: 'JetBrains Mono', monospace;
         font-size: 0.7rem;
@@ -188,18 +154,33 @@
         clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
     }
 
-    /* --- PRINT / PDF STYLES (CLEAN WHITE FOR ATS & PRINTERS) --- */
+    @media (max-width: 640px) {
+        .games-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       PRINT STYLES — SINGLE PAGE A4 FIT
+       ============================================= */
     @media print {
         @page {
             size: A4;
-            margin: 10mm 15mm;
+            margin: 6mm 10mm 6mm 10mm;
+        }
+
+        * {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            box-sizing: border-box;
         }
 
         body {
             background: #fff !important;
-            color: #222 !important;
+            color: #1a1a1a !important;
             font-family: 'Segoe UI', Arial, sans-serif !important;
-            font-size: 11pt !important;
+            font-size: 8.3pt !important;
+            line-height: 1.38 !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         .container {
@@ -216,81 +197,142 @@
         .container::before { display: none !important; }
         .btn-download { display: none !important; }
 
+        /* ---- HEADER ---- */
         h1 {
             font-family: 'Segoe UI', Arial, sans-serif !important;
-            font-size: 24pt !important;
+            font-size: 19pt !important;
             color: #000 !important;
             letter-spacing: 0 !important;
-            margin-bottom: 2px !important;
+            margin: 0 0 1px 0 !important;
+            line-height: 1 !important;
         }
         h1 span { color: #000 !important; }
 
         .subtitle {
             font-family: 'Segoe UI', Arial, sans-serif !important;
-            font-size: 12pt !important;
-            color: #555 !important;
+            font-size: 7.8pt !important;
+            color: #444 !important;
             letter-spacing: 0 !important;
             text-transform: none !important;
-            margin-bottom: 10px !important;
+            margin-bottom: 4px !important;
         }
 
+        .contact-info {
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            font-size: 7.6pt !important;
+            color: #333 !important;
+            margin-bottom: 6px !important;
+            gap: 12px !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+        }
+        .contact-info a { color: #000 !important; text-decoration: none !important; }
+
+        /* ---- SECTION HEADINGS ---- */
         h2 {
             font-family: 'Segoe UI', Arial, sans-serif !important;
-            font-size: 14pt !important;
+            font-size: 10.5pt !important;
+            font-weight: 700 !important;
             color: #000 !important;
-            border-bottom: 2px solid #000 !important;
-            letter-spacing: 0 !important;
-            margin-top: 15px !important;
+            border-bottom: 1.2px solid #000 !important;
+            letter-spacing: 0.3px !important;
+            text-transform: uppercase !important;
+            margin-top: 10px !important;
+            margin-bottom: 4px !important;
             padding-bottom: 2px !important;
         }
 
         h3 {
             font-family: 'Segoe UI', Arial, sans-serif !important;
-            font-size: 12pt !important;
+            font-size: 8.6pt !important;
+            font-weight: 700 !important;
             color: #000 !important;
-            margin-top: 10px !important;
+            margin-top: 6px !important;
+            margin-bottom: 1px !important;
         }
 
         .meta {
             font-family: 'Segoe UI', Arial, sans-serif !important;
-            font-size: 10pt !important;
+            font-size: 7.4pt !important;
             color: #555 !important;
             text-transform: none !important;
             letter-spacing: 0 !important;
+            margin-bottom: 2px !important;
         }
 
-        .contact-info {
-            font-family: 'Segoe UI', Arial, sans-serif !important;
-            color: #333 !important;
-            font-size: 10pt !important;
-            margin-bottom: 15px !important;
-        }
-        .contact-info a { color: #000 !important; }
-
-        p, li {
-            color: #222 !important;
-            font-size: 10.5pt !important;
-            line-height: 1.4 !important;
+        /* ---- BODY TEXT ---- */
+        p {
+            font-size: 8.3pt !important;
+            color: #1a1a1a !important;
+            line-height: 1.38 !important;
+            margin: 0 0 4px 0 !important;
         }
 
+        ul {
+            margin: 2px 0 3px 15px !important;
+            padding: 0 !important;
+        }
+
+        li {
+            font-size: 8.3pt !important;
+            color: #1a1a1a !important;
+            line-height: 1.38 !important;
+            margin-bottom: 2px !important;
+        }
+
+        /* ---- SKILLS CHIPS ---- */
+        .chip-container {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 4px !important;
+            margin-top: 4px !important;
+        }
         .chip {
             background: none !important;
-            border: 1px solid #ccc !important;
-            color: #333 !important;
+            border: 0.8px solid #aaa !important;
+            color: #222 !important;
             clip-path: none !important;
-            border-radius: 4px !important;
+            border-radius: 2px !important;
             font-family: sans-serif !important;
-            padding: 2px 6px !important;
+            font-size: 7.2pt !important;
+            padding: 1px 5px !important;
         }
 
+        /* ---- LAYOUT ---- */
         .columns {
             display: flex !important;
-            gap: 20px !important;
+            gap: 15px !important;
+            flex-wrap: nowrap !important;
         }
-        
-        * {
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
+        .col {
+            flex: 1 !important;
+            min-width: 0 !important;
+        }
+
+        .section {
+            margin-bottom: 0 !important;
+        }
+
+        /* ---- GAMES GRID ---- */
+        .games-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr 1fr !important;
+            gap: 5px 20px !important;
+        }
+
+        .game-item {
+            break-inside: avoid;
+        }
+
+        .game-item h3 {
+            margin-top: 3px !important;
+            margin-bottom: 1px !important;
+            font-size: 8pt !important;
+        }
+
+        /* Make "Funny Girl" span only 1 col in print for better space usage */
+        .game-item[style*="grid-column"] {
+            grid-column: auto !important;
         }
     }
 </style>
@@ -300,21 +342,22 @@
 <div class="container">
 
     <h1>Abu <span>Baker</span></h1>
-    <div class="subtitle">// Unity Game Developer</div>
-    
+    <div class="subtitle">// Unity Game Developer & Full-Stack Engineer</div>
+
     <div class="contact-info">
         <span>📍 Lahore, Pakistan</span>
         <span>📞 +92 300 0423918</span>
         <span>📧 <a href="mailto:bakerrana298@gmail.com">bakerrana298@gmail.com</a></span>
-        <span>🔗 <a href="https://www.linkedin.com/in/abu-baker-741556291/" target="_blank">LinkedIn Profile</a></span>
+        <span>🔗 <a href="https://www.linkedin.com/in/abu-baker-741556291/" target="_blank">LinkedIn</a></span>
+        <span>🐙 <a href="https://github.com/Abubaker298" target="_blank">GitHub</a></span>
     </div>
 
-    <button class="btn-download" onclick="window.print()">Download PDF</button>
+    <button class="btn-download" onclick="window.print()">⬇ Download PDF</button>
 
     <div class="section">
         <h2>Professional Summary</h2>
         <p>
-            Results-driven <strong>Unity Game Developer</strong> with 3+ years of hands-on experience building polished mobile games. Specialized in C# OOP, advanced AI systems, custom physics, and gameplay architecture. Proven track record of shipping 20+ optimized titles (10M+ combined downloads) across simulation, action, fighting, and casual genres. Adept at building smooth, scalable systems with clean code and collaborating in cross-functional teams to deliver high-quality, high-performance mobile experiences.
+            Results-driven <strong>Unity Game Developer</strong> and <strong>Full-Stack Engineer</strong> with 3+ years of hands-on experience. Specialized in C# OOP, advanced AI systems, custom physics, and gameplay architecture, having shipped 20+ mobile titles with over 10M+ combined downloads. Additionally proficient in modern web technologies (React, Firebase, Tailwind CSS) for building robust, scalable internal team tools, SaaS platforms, and gamified productivity solutions.
         </p>
     </div>
 
@@ -325,24 +368,23 @@
                 <strong>Programming & Architecture</strong>
                 <div class="chip-container">
                     <span class="chip">C# Expert</span>
-                    <span class="chip">OOP</span>
-                    <span class="chip">SOLID</span>
+                    <span class="chip">JavaScript / React</span>
+                    <span class="chip">OOP & SOLID</span>
                     <span class="chip">Design Patterns</span>
                     <span class="chip">Clean Architecture</span>
                     <span class="chip">Data Structures</span>
                 </div>
             </div>
             <div class="col">
-                <strong>Unity Engine & Live Ops</strong>
+                <strong>Engine, Web & Live Ops</strong>
                 <div class="chip-container">
-                    <span class="chip">NavMesh/AI</span>
-                    <span class="chip">FSM</span>
-                    <span class="chip">Physics</span>
-                    <span class="chip">Mecanim/IK</span>
-                    <span class="chip">Mobile Optimization</span>
-                    <span class="chip">Firebase</span>
+                    <span class="chip">Unity 3D/2D</span>
+                    <span class="chip">NavMesh/FSM</span>
+                    <span class="chip">Physics & IK</span>
+                    <span class="chip">Firebase Firestore</span>
+                    <span class="chip">Tailwind CSS</span>
                     <span class="chip">AdMob/AppLovin</span>
-                    <span class="chip">Git</span>
+                    <span class="chip">Git / GitHub CI</span>
                 </div>
             </div>
         </div>
@@ -363,41 +405,77 @@
     </div>
 
     <div class="section">
-        <h2>Featured Titles (10M+ Combined Downloads)</h2>
+        <h2>Featured Game Titles (10M+ Combined Downloads)</h2>
+        <div class="games-grid">
 
-        <h3>Prison Escape Master Mind</h3>
-        <div class="meta">Stealth / Strategy — 1M+ Downloads</div>
-        <ul>
-            <li>Engineered core stealth mechanics including Patrol AI, vision cones, and FSM guard behavior.</li>
-            <li>Developed dynamic difficulty systems that adjust enemy awareness based on player pacing and actions.</li>
-        </ul>
+            <div class="game-item">
+                <h3>Prison Escape Master Mind</h3>
+                <div class="meta">Stealth / Strategy — 1M+ DLs</div>
+                <ul>
+                    <li>Engineered core stealth mechanics including Patrol AI, vision cones, and FSM guard behavior.</li>
+                </ul>
+            </div>
 
-        <h3>Arena Champions: Fighting</h3>
-        <div class="meta">Action / Fighting — 900K+ Downloads</div>
-        <ul>
-            <li>Created a responsive combo-chain system utilizing Animation Events for precise, frame-perfect hit detection.</li>
-            <li>Built an animation-driven movement controller for fluid combat engagements.</li>
-        </ul>
+            <div class="game-item">
+                <h3>Bomb Chips: Eat to Survive</h3>
+                <div class="meta">Action / Survival — 950K+ DLs</div>
+                <ul>
+                    <li>Programmed intense survival loops and escalating difficulty handling fast-paced reflex mechanics.</li>
+                </ul>
+            </div>
 
-        <h3>i Am a Hamster Game 3D</h3>
-        <div class="meta">Stealth / Comedy — 500K+ Downloads</div>
-        <ul>
-            <li>Developed stealth heist gameplay logic, allowing players to dodge reactive AI and deliver snacks.</li>
-            <li>Implemented custom physics interactions for prank-packed, dynamic environments.</li>
-        </ul>
-        
-        <h3>Bomb Chips & Speed Rock Escape</h3>
-        <div class="meta">Action / Survival / Runner — 950K+ Downloads</div>
-        <ul>
-            <li><strong>Bomb Chips:</strong> Programmed intense survival loops and escalating difficulty handling fast-paced reflex mechanics.</li>
-            <li><strong>Speed Rock:</strong> Built physics-driven obstacle evasion logic and high-speed level chunk generation for mobile runners.</li>
-        </ul>
+            <div class="game-item">
+                <h3>Arena Champions: Fighting</h3>
+                <div class="meta">Action / Fighting — 900K+ DLs</div>
+                <ul>
+                    <li>Created responsive combo-chains using Animation Events for precise, frame-perfect hit detection.</li>
+                </ul>
+            </div>
 
-        <h3>Pet Supermarket Simulator</h3>
-        <div class="meta">Simulation / Management — 100K+ Downloads</div>
+            <div class="game-item">
+                <h3>i Am a Hamster Game 3D</h3>
+                <div class="meta">Stealth / Comedy — 500K+ DLs</div>
+                <ul>
+                    <li>Developed stealth heist gameplay logic to dodge reactive AI with custom physics interactions.</li>
+                </ul>
+            </div>
+
+            <div class="game-item">
+                <h3>Pet Supermarket Simulator</h3>
+                <div class="meta">Sim / Management — 100K+ DLs</div>
+                <ul>
+                    <li>Constructed complex economy loops, inventory logic, and JSON-based persistent save/load states.</li>
+                </ul>
+            </div>
+
+            <div class="game-item">
+                <h3>Speed Rock Escape Run</h3>
+                <div class="meta">Action / Runner — 100K+ DLs</div>
+                <ul>
+                    <li>Built physics-driven obstacle evasion logic and high-speed level chunk generation for runners.</li>
+                </ul>
+            </div>
+
+            <div class="game-item">
+                <h3>Funny Girl Pranks Bear</h3>
+                <div class="meta">Simulation / Comedy — 100K+ DLs</div>
+                <ul>
+                    <li>Implemented dynamic props, reactive AI behavior, and comedy-style interaction systems.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Featured Side Project</h2>
+
+        <h3>Unity Work OS (Enterprise SaaS)</h3>
+        <div class="meta">React.js / Firebase / Tailwind CSS / Web App</div>
         <ul>
-            <li>Constructed complex economy loops, handling inventory, pricing logic, and customer AI behaviors.</li>
-            <li>Implemented robust persistent save/load states via JSON serialization.</li>
+            <li><strong>Full-Stack Productivity Platform:</strong> Designed and developed a comprehensive, real-time operating system for game development teams from scratch, actively used daily by my team.</li>
+            <li><strong>Real-time Sync & Offline Support:</strong> Implemented Firebase Firestore with robust offline detection, allowing seamless syncing of data, live chat, and direct messaging.</li>
+            <li><strong>Advanced Tooling:</strong> Created a highly interactive Kanban board, dynamic attendance tracking, gamification engine with XP/Coins, and GitHub commit syncing.</li>
         </ul>
     </div>
 
@@ -409,7 +487,6 @@
                 <span class="meta">Virtual University of Pakistan</span>
             </div>
         </div>
-
         <div class="col">
             <h2>Languages</h2>
             <ul>
