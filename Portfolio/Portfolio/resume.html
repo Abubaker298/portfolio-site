@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resume | Abu Baker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+<style>
+    /* --- CSS VARIABLES MATCHING PORTFOLIO --- */
+    :root {
+      --ink: #03040a;
+      --ink2: #080c18;
+      --cyan: #00e5ff;
+      --cyan-dim: rgba(0, 229, 255, 0.15);
+      --white: #f0f4ff;
+      --muted: #5a6080;
+      --glass: rgba(8, 12, 24, 0.85);
+    }
+
+    /* --- SCREEN STYLES (DARK/NEON MODE) --- */
+    body {
+        font-family: 'Space Grotesk', sans-serif;
+        background: var(--ink);
+        background-image: radial-gradient(circle at 50% 0%, #0d1b2a 0%, var(--ink) 70%);
+        color: rgba(240, 244, 255, 0.8);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    .container {
+        width: min(900px, 92%);
+        margin: 40px auto;
+        background: var(--glass);
+        padding: 45px 50px;
+        border: 1px solid var(--cyan-dim);
+        box-shadow: 0 10px 40px rgba(0, 229, 255, 0.05);
+        clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+        position: relative;
+    }
+
+    /* Scanline effect from portfolio */
+    .container::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 2px;
+        background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+        opacity: 0.5;
+    }
+
+    h1 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 3.5rem;
+        margin: 0 0 5px 0;
+        color: var(--white);
+        letter-spacing: 2px;
+        line-height: 1;
+    }
+    
+    h1 span {
+        color: var(--cyan);
+    }
+
+    .subtitle {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1rem;
+        color: var(--cyan);
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.8rem;
+        margin-top: 35px;
+        margin-bottom: 15px;
+        color: var(--white);
+        border-bottom: 1px solid var(--cyan-dim);
+        padding-bottom: 8px;
+        letter-spacing: 2px;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        margin: 20px 0 2px 0;
+        color: var(--white);
+        font-weight: 600;
+    }
+
+    .meta {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        color: var(--cyan);
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin: 0 0 12px 0;
+        font-size: 0.95rem;
+    }
+
+    ul {
+        margin: 8px 0 0 18px;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+    }
+    
+    li::marker {
+        color: var(--cyan);
+    }
+
+    .columns {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .col {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .contact-info {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 25px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .contact-info a {
+        color: var(--cyan);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .contact-info a:hover {
+        color: #fff;
+    }
+
+    /* DOWNLOAD BUTTON MATCHING PORTFOLIO */
+    .btn-download {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        padding: 12px 24px;
+        background: var(--cyan);
+        color: var(--ink);
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+        transition: all 0.2s;
+        cursor: pointer;
+        display: inline-block;
+        border: none;
+        margin-bottom: 20px;
+    }
+    .btn-download:hover {
+        background: #33eeff;
+        box-shadow: 0 0 20px rgba(0,229,255,0.4);
+        transform: translateY(-2px);
+    }
+
+    /* SKILL CHIPS */
+    .chip-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+    }
+    .chip {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        background: rgba(0, 229, 255, 0.06);
+        border: 1px solid rgba(0, 229, 255, 0.2);
+        color: var(--cyan);
+        clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
+    }
+
+    /* --- PRINT / PDF STYLES (CLEAN WHITE FOR ATS & PRINTERS) --- */
+    @media print {
+        @page {
+            size: A4;
+            margin: 10mm 15mm;
+        }
+
+        body {
+            background: #fff !important;
+            color: #222 !important;
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            font-size: 11pt !important;
+        }
+
+        .container {
+            width: 100% !important;
+            max-width: none !important;
+            background: #fff !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            clip-path: none !important;
+        }
+
+        .container::before { display: none !important; }
+        .btn-download { display: none !important; }
+
+        h1 {
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            font-size: 24pt !important;
+            color: #000 !important;
+            letter-spacing: 0 !important;
+            margin-bottom: 2px !important;
+        }
+        h1 span { color: #000 !important; }
+
+        .subtitle {
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            font-size: 12pt !important;
+            color: #555 !important;
+            letter-spacing: 0 !important;
+            text-transform: none !important;
+            margin-bottom: 10px !important;
+        }
+
+        h2 {
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            font-size: 14pt !important;
+            color: #000 !important;
+            border-bottom: 2px solid #000 !important;
+            letter-spacing: 0 !important;
+            margin-top: 15px !important;
+            padding-bottom: 2px !important;
+        }
+
+        h3 {
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            font-size: 12pt !important;
+            color: #000 !important;
+            margin-top: 10px !important;
+        }
+
+        .meta {
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            font-size: 10pt !important;
+            color: #555 !important;
+            text-transform: none !important;
+            letter-spacing: 0 !important;
+        }
+
+        .contact-info {
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            color: #333 !important;
+            font-size: 10pt !important;
+            margin-bottom: 15px !important;
+        }
+        .contact-info a { color: #000 !important; }
+
+        p, li {
+            color: #222 !important;
+            font-size: 10.5pt !important;
+            line-height: 1.4 !important;
+        }
+
+        .chip {
+            background: none !important;
+            border: 1px solid #ccc !important;
+            color: #333 !important;
+            clip-path: none !important;
+            border-radius: 4px !important;
+            font-family: sans-serif !important;
+            padding: 2px 6px !important;
+        }
+
+        .columns {
+            display: flex !important;
+            gap: 20px !important;
+        }
+        
+        * {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Abu <span>Baker</span></h1>
+    <div class="subtitle">// Unity Game Developer</div>
+    
+    <div class="contact-info">
+        <span>📍 Lahore, Pakistan</span>
+        <span>📞 +92 300 0423918</span>
+        <span>📧 <a href="mailto:bakerrana298@gmail.com">bakerrana298@gmail.com</a></span>
+        <span>🔗 <a href="https://www.linkedin.com/in/abu-baker-741556291/" target="_blank">LinkedIn Profile</a></span>
+    </div>
+
+    <button class="btn-download" onclick="window.print()">Download PDF</button>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>
+            Results-driven <strong>Unity Game Developer</strong> with 3+ years of hands-on experience building polished mobile games. Specialized in C# OOP, advanced AI systems, custom physics, and gameplay architecture. Proven track record of shipping 20+ optimized titles (10M+ combined downloads) across simulation, action, fighting, and casual genres. Adept at building smooth, scalable systems with clean code and collaborating in cross-functional teams to deliver high-quality, high-performance mobile experiences.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="columns">
+            <div class="col">
+                <strong>Programming & Architecture</strong>
+                <div class="chip-container">
+                    <span class="chip">C# Expert</span>
+                    <span class="chip">OOP</span>
+                    <span class="chip">SOLID</span>
+                    <span class="chip">Design Patterns</span>
+                    <span class="chip">Clean Architecture</span>
+                    <span class="chip">Data Structures</span>
+                </div>
+            </div>
+            <div class="col">
+                <strong>Unity Engine & Live Ops</strong>
+                <div class="chip-container">
+                    <span class="chip">NavMesh/AI</span>
+                    <span class="chip">FSM</span>
+                    <span class="chip">Physics</span>
+                    <span class="chip">Mecanim/IK</span>
+                    <span class="chip">Mobile Optimization</span>
+                    <span class="chip">Firebase</span>
+                    <span class="chip">AdMob/AppLovin</span>
+                    <span class="chip">Git</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Experience</h2>
+
+        <h3>Unity Game Developer</h3>
+        <div class="meta">The Gaminators Group | Lahore, Pakistan | July 2023 – Present</div>
+        <ul>
+            <li><strong>Gameplay Architecture:</strong> Designed and engineered reusable player controllers (TPS/FPS), modular combat mechanics, and real-time interaction systems for multiple live simulation and action titles.</li>
+            <li><strong>AI Systems Development:</strong> Built intelligent NPC behaviors using Finite State Machines (FSM), integrating stealth detection via Raycasting & Vision Cones, patrol logic, and dynamic difficulty scaling.</li>
+            <li><strong>Performance Optimization:</strong> Successfully reduced draw calls and memory usage by <strong>30%</strong> through Object Pooling, Texture Atlasing, and memory profiling, achieving a stable 60 FPS on low-end mobile devices.</li>
+            <li><strong>Live Ops & Monetization:</strong> Integrated AppLovin MAX, AdMob, Firebase Analytics, and Remote Config for A/B testing and event tracking to maximize retention.</li>
+            <li><strong>Cross-functional Collaboration:</strong> Worked intimately with 3D artists, Game Designers, and Producers in agile environments to ship polished content on tight deadlines.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Featured Titles (10M+ Combined Downloads)</h2>
+
+        <h3>Prison Escape Master Mind</h3>
+        <div class="meta">Stealth / Strategy — 1M+ Downloads</div>
+        <ul>
+            <li>Engineered core stealth mechanics including Patrol AI, vision cones, and FSM guard behavior.</li>
+            <li>Developed dynamic difficulty systems that adjust enemy awareness based on player pacing and actions.</li>
+        </ul>
+
+        <h3>Arena Champions: Fighting</h3>
+        <div class="meta">Action / Fighting — 900K+ Downloads</div>
+        <ul>
+            <li>Created a responsive combo-chain system utilizing Animation Events for precise, frame-perfect hit detection.</li>
+            <li>Built an animation-driven movement controller for fluid combat engagements.</li>
+        </ul>
+
+        <h3>i Am a Hamster Game 3D</h3>
+        <div class="meta">Stealth / Comedy — 500K+ Downloads</div>
+        <ul>
+            <li>Developed stealth heist gameplay logic, allowing players to dodge reactive AI and deliver snacks.</li>
+            <li>Implemented custom physics interactions for prank-packed, dynamic environments.</li>
+        </ul>
+        
+        <h3>Bomb Chips & Speed Rock Escape</h3>
+        <div class="meta">Action / Survival / Runner — 950K+ Downloads</div>
+        <ul>
+            <li><strong>Bomb Chips:</strong> Programmed intense survival loops and escalating difficulty handling fast-paced reflex mechanics.</li>
+            <li><strong>Speed Rock:</strong> Built physics-driven obstacle evasion logic and high-speed level chunk generation for mobile runners.</li>
+        </ul>
+
+        <h3>Pet Supermarket Simulator</h3>
+        <div class="meta">Simulation / Management — 100K+ Downloads</div>
+        <ul>
+            <li>Constructed complex economy loops, handling inventory, pricing logic, and customer AI behaviors.</li>
+            <li>Implemented robust persistent save/load states via JSON serialization.</li>
+        </ul>
+    </div>
+
+    <div class="columns">
+        <div class="col">
+            <h2>Education</h2>
+            <div style="margin-top: 5px;">
+                <strong>BS Software Engineering</strong><br>
+                <span class="meta">Virtual University of Pakistan</span>
+            </div>
+        </div>
+
+        <div class="col">
+            <h2>Languages</h2>
+            <ul>
+                <li>English (Professional)</li>
+                <li>Urdu (Native)</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
