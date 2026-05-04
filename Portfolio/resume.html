@@ -86,73 +86,99 @@ strong{color:rgba(240,244,255,.92);}
 
 /* ── PRINT ── */
 @media print{
-  @page{size:A4;margin:5mm 9mm 5mm 9mm;}
+  @page{
+    size:A4;
+    margin:4mm 8mm 4mm 8mm;
+  }
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-sizing:border-box;}
-  body{background:#fff!important;color:#111!important;font-family:'Segoe UI',Arial,sans-serif!important;font-size:7.4pt!important;line-height:1.28!important;margin:0!important;padding:0!important;}
-  .container{width:100%!important;max-width:none!important;background:#fff!important;border:none!important;padding:0!important;margin:0!important;box-shadow:none!important;clip-path:none!important;}
+  html,body{
+    height:auto!important;
+    overflow:visible!important;
+    background:#fff!important;
+    color:#111!important;
+    font-family:'Segoe UI',Arial,sans-serif!important;
+    font-size:7pt!important;
+    line-height:1.25!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .container{
+    width:100%!important;
+    max-width:none!important;
+    background:#fff!important;
+    border:none!important;
+    padding:0!important;
+    margin:0!important;
+    box-shadow:none!important;
+    clip-path:none!important;
+  }
   .container::before,.btn-dl,.rfooter,.port-link{display:none!important;}
 
   /* AVAILABILITY */
-  .avail{background:none!important;border:.7px solid #999!important;color:#333!important;clip-path:none!important;border-radius:2px!important;font-size:6.5pt!important;padding:1px 6px!important;display:inline-block!important;}
+  .avail{background:none!important;border:.7px solid #999!important;color:#333!important;clip-path:none!important;border-radius:2px!important;font-size:6pt!important;padding:1px 5px!important;display:inline-block!important;}
   .avail-dot{display:none!important;}
 
   /* HEADER */
   .header-row{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;margin-bottom:1px!important;}
-  h1{font-family:'Segoe UI',Arial,sans-serif!important;font-size:17pt!important;color:#000!important;letter-spacing:0!important;margin:0!important;line-height:1!important;}
+  h1{font-family:'Segoe UI',Arial,sans-serif!important;font-size:16pt!important;color:#000!important;letter-spacing:0!important;margin:0!important;line-height:1!important;}
   h1 span{color:#000!important;}
-  .subtitle{font-family:'Segoe UI',Arial,sans-serif!important;font-size:7pt!important;color:#444!important;letter-spacing:0!important;text-transform:none!important;margin-bottom:2px!important;}
-  .contact-info{font-family:'Segoe UI',Arial,sans-serif!important;font-size:6.8pt!important;color:#333!important;margin-bottom:2px!important;gap:10px!important;display:flex!important;flex-wrap:wrap!important;}
+  .subtitle{font-family:'Segoe UI',Arial,sans-serif!important;font-size:6.8pt!important;color:#444!important;letter-spacing:0!important;text-transform:none!important;margin-bottom:1px!important;}
+  .contact-info{font-family:'Segoe UI',Arial,sans-serif!important;font-size:6.5pt!important;color:#333!important;margin-bottom:2px!important;gap:8px!important;display:flex!important;flex-wrap:wrap!important;}
   .contact-info a{color:#000!important;text-decoration:none!important;}
 
   /* STATS BAR */
-  .sstats{display:flex!important;border:.7px solid #bbb!important;clip-path:none!important;border-radius:2px!important;margin-top:4px!important;}
-  .sst{flex:1!important;padding:3px 6px!important;border-right:.7px solid #bbb!important;text-align:center!important;}
+  .sstats{display:flex!important;border:.7px solid #bbb!important;clip-path:none!important;border-radius:2px!important;margin-top:3px!important;}
+  .sst{flex:1!important;padding:2px 4px!important;border-right:.7px solid #bbb!important;text-align:center!important;}
   .sst:last-child{border-right:none!important;}
   .sstn{font-family:'Segoe UI',Arial,sans-serif!important;font-size:9pt!important;font-weight:700!important;color:#000!important;text-shadow:none!important;display:block!important;line-height:1!important;}
-  .sstl{font-family:'Segoe UI',Arial,sans-serif!important;font-size:5.8pt!important;color:#555!important;text-transform:none!important;letter-spacing:0!important;margin-top:1px!important;display:block!important;}
+  .sstl{font-family:'Segoe UI',Arial,sans-serif!important;font-size:5.5pt!important;color:#555!important;text-transform:none!important;letter-spacing:0!important;margin-top:1px!important;display:block!important;}
 
   /* SECTION HEADINGS */
-  h2{font-family:'Segoe UI',Arial,sans-serif!important;font-size:8.5pt!important;font-weight:700!important;color:#000!important;border-bottom:1px solid #000!important;letter-spacing:.2px!important;text-transform:uppercase!important;margin-top:6px!important;margin-bottom:3px!important;padding-bottom:1px!important;display:block!important;}
+  h2{font-family:'Segoe UI',Arial,sans-serif!important;font-size:8pt!important;font-weight:700!important;color:#000!important;border-bottom:1px solid #000!important;letter-spacing:.2px!important;text-transform:uppercase!important;margin-top:5px!important;margin-bottom:2px!important;padding-bottom:1px!important;display:block!important;}
   h2::before{display:none!important;}
-  h3{font-family:'Segoe UI',Arial,sans-serif!important;font-size:7.6pt!important;font-weight:700!important;color:#000!important;margin-top:4px!important;margin-bottom:0px!important;}
-  .meta{font-family:'Segoe UI',Arial,sans-serif!important;font-size:6.6pt!important;color:#555!important;text-transform:none!important;letter-spacing:0!important;margin-bottom:1px!important;}
+  h3{font-family:'Segoe UI',Arial,sans-serif!important;font-size:7.2pt!important;font-weight:700!important;color:#000!important;margin-top:3px!important;margin-bottom:0px!important;}
+  .meta{font-family:'Segoe UI',Arial,sans-serif!important;font-size:6.2pt!important;color:#555!important;text-transform:none!important;letter-spacing:0!important;margin-bottom:1px!important;}
 
   /* BODY TEXT */
-  p{font-size:7.4pt!important;color:#111!important;line-height:1.28!important;margin:0 0 2px!important;}
-  ul{margin:1px 0 2px 13px!important;padding:0!important;}
-  li{font-size:7.4pt!important;color:#111!important;line-height:1.28!important;margin-bottom:1px!important;}
+  p{font-size:7pt!important;color:#111!important;line-height:1.25!important;margin:0 0 2px!important;}
+  ul{margin:1px 0 1px 12px!important;padding:0!important;}
+  li{font-size:7pt!important;color:#111!important;line-height:1.25!important;margin-bottom:1px!important;}
   strong{color:#000!important;}
 
   /* SKILLS */
-  .chip-container{display:flex!important;flex-wrap:wrap!important;gap:3px!important;margin-top:3px!important;}
-  .chip{background:none!important;border:.6px solid #bbb!important;color:#222!important;clip-path:none!important;border-radius:2px!important;font-family:sans-serif!important;font-size:6.5pt!important;padding:0px 4px!important;}
-  .columns{display:flex!important;gap:12px!important;flex-wrap:nowrap!important;}
+  .chip-container{display:flex!important;flex-wrap:wrap!important;gap:2px!important;margin-top:2px!important;}
+  .chip{background:none!important;border:.6px solid #bbb!important;color:#222!important;clip-path:none!important;border-radius:2px!important;font-family:sans-serif!important;font-size:6pt!important;padding:0px 3px!important;}
+  .columns{display:flex!important;gap:10px!important;flex-wrap:nowrap!important;}
   .col{flex:1!important;min-width:0!important;}
 
   /* EXPERIENCE */
-  .exp-card{background:none!important;border:.7px solid #ccc!important;padding:5px 8px!important;clip-path:none!important;border-radius:2px!important;}
+  .exp-card{background:none!important;border:.7px solid #ccc!important;padding:4px 7px!important;clip-path:none!important;border-radius:2px!important;}
   .exp-card::before{display:none!important;}
-  .exp-top{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;margin-bottom:2px!important;}
-  .exp-role{font-family:'Segoe UI',Arial,sans-serif!important;font-size:8.2pt!important;font-weight:700!important;color:#000!important;letter-spacing:0!important;}
-  .exp-co{font-size:6.6pt!important;color:#444!important;margin-top:1px!important;}
-  .exp-badge{background:none!important;border:.6px solid #bbb!important;color:#444!important;clip-path:none!important;border-radius:2px!important;font-size:6.5pt!important;padding:1px 5px!important;}
+  .exp-top{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;margin-bottom:1px!important;}
+  .exp-role{font-family:'Segoe UI',Arial,sans-serif!important;font-size:8pt!important;font-weight:700!important;color:#000!important;letter-spacing:0!important;}
+  .exp-co{font-size:6.2pt!important;color:#444!important;margin-top:0!important;}
+  .exp-badge{background:none!important;border:.6px solid #bbb!important;color:#444!important;clip-path:none!important;border-radius:2px!important;font-size:6pt!important;padding:1px 4px!important;}
 
   /* GAMES — 3 columns, compact */
-  .games-top{display:flex!important;margin-bottom:3px!important;}
-  .total-badge{background:none!important;border:.6px solid #bbb!important;color:#333!important;clip-path:none!important;border-radius:2px!important;font-size:6.5pt!important;padding:0px 5px!important;}
-  .games-grid{display:grid!important;grid-template-columns:1fr 1fr 1fr!important;gap:3px 10px!important;}
-  .game-item{background:none!important;border:.6px solid #e0e0e0!important;padding:3px 6px!important;clip-path:none!important;border-radius:2px!important;break-inside:avoid!important;}
-  .game-item h3{margin:0 0 0px!important;font-size:7pt!important;}
-  .gdl{background:none!important;border:.5px solid #bbb!important;color:#444!important;font-size:6pt!important;border-radius:2px!important;padding:0 3px!important;margin-left:4px!important;}
-  .game-item .meta{font-size:6pt!important;margin-bottom:1px!important;}
-  .game-item li{font-size:6.8pt!important;margin-bottom:0px!important;line-height:1.25!important;}
+  .games-top{display:flex!important;margin-bottom:2px!important;}
+  .total-badge{background:none!important;border:.6px solid #bbb!important;color:#333!important;clip-path:none!important;border-radius:2px!important;font-size:6pt!important;padding:0px 4px!important;}
+  .games-grid{display:grid!important;grid-template-columns:1fr 1fr 1fr!important;gap:2px 8px!important;}
+  .game-item{background:none!important;border:.6px solid #e0e0e0!important;padding:2px 5px!important;clip-path:none!important;border-radius:2px!important;break-inside:avoid!important;}
+  .game-item h3{margin:0 0 0px!important;font-size:6.8pt!important;}
+  .gdl{background:none!important;border:.5px solid #bbb!important;color:#444!important;font-size:5.8pt!important;border-radius:2px!important;padding:0 2px!important;margin-left:3px!important;}
+  .game-item .meta{font-size:5.8pt!important;margin-bottom:0px!important;}
+  .game-item li{font-size:6.5pt!important;margin-bottom:0px!important;line-height:1.2!important;}
 
   /* PROJECT */
-  .proj-card{background:none!important;border:.7px solid #ccc!important;padding:5px 8px!important;clip-path:none!important;border-radius:2px!important;}
+  .proj-card{background:none!important;border:.7px solid #ccc!important;padding:4px 7px!important;clip-path:none!important;border-radius:2px!important;}
   .proj-card::before,.proj-live{display:none!important;}
 
-  /* EDUCATION / LANGUAGES / INTERESTS */
+  /* EDUCATION / LANGUAGES / INTERESTS — tighter */
   .section{margin-bottom:0!important;}
+  .columns .col h2{margin-top:4px!important;}
+
+  /* Prevent page break in key sections */
+  .exp-card,.proj-card,.games-grid,.sstats{page-break-inside:avoid!important;}
 }
 
 @media(max-width:640px){.games-grid{grid-template-columns:1fr;}}
@@ -325,7 +351,7 @@ strong{color:rgba(240,244,255,.92);}
       <h2>Education</h2>
       <div style="margin-top:4px;">
         <strong>BS Software Engineering</strong><br>
-        <div class="meta">Virtual University of Pakistan &nbsp;·&nbsp; 2021 – Present</div>
+        <div class="meta">Virtual University of Pakistan</div>
       </div>
     </div>
     <div class="col">
